@@ -2,7 +2,9 @@
 layout: single
 title:  "Helping projects survive translations"
 date:   2022-01-04 13:29:32 +0100
-categories: translations
+categories: translations swift
+# header:
+#     image: /assets/images/main_header.jpeg
 ---
 
 Translating (or localizing) strings in Swift apps is usually straightforward: you get a *key*, call a method and get it translated as results.

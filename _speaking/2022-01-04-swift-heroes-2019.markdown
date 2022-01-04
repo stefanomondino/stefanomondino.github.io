@@ -1,0 +1,31 @@
+---
+layout: single
+title:  "Swift Heroes 2019"
+date:   2022-01-04 13:29:32 +0100
+collection: speaking
+tags: reactive combine video
+excerpt: Wrapping things with Combine
+header: 
+    teaser: /assets/images/stefano_mondino_sh2019.jpg
+#     image: /assets/images/main_header.jpeg
+---
+
+In 2019 we got back for a second Swift Heroes edition in a way more bigger venue.
+
+Earlier before the Swift dev world wash *shocked* by WWDC big news when Apple introduced SwiftUI and Combine into the pitch.
+
+I was also thrilled to have Shai Mishali (the lead maintainer of RxSwift) in our speaker lineup, so I thought that the Combine topic was way more than covered, and I could dedicate myself to some more "light" or as well "battle tested" topic.
+Imagine my face when Shai decided to present [a completely different topic](https://www.youtube.com/watch?v=UFyx7EtbcMU) :D 
+
+We had different talks about Swift UI and nothing about Combine, so I decided to step in trying to do my best to cover it.
+
+{% include figure image_path="/assets/images/stefano_mondino_sh2019.jpg" alt="looking smooth at SH 2019" caption="photo credits: Swift Heroes (2019)" %}
+
+
+From a speaker point of view, the talk went way better than the year before: more fluent, more confident, no stage fear or panic attacks. I didn't enjoy the topic myself very much, but got good feedback from the audience (and from Shai himself <3). Unfortunately, no internet connection was available in that underground venue, so I had to skip my code demo and had nothing to show at the end of the talk, which was a pity. But this was another big step for me for my self-confidence.
+
+Demo repository can be found on [my Github](https://github.com/stefanomondino/SwiftHeroes2019LiveDemo)
+
+## Wrapping things with Combine
+
+{% include video id="yJV4rMAStwA" provider="youtube" %}

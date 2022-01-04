@@ -1,0 +1,35 @@
+---
+layout: single
+title:  "Swift Heroes 2018"
+date:   2022-01-04 13:29:32 +0100
+collection: speaking
+tags: rxswift video
+excerpt: RxSwift for UI - the tips & tricks your views were waiting for
+header: 
+    teaser: /assets/images/swift_heroes_2018.jpeg
+#     image: /assets/images/main_header.jpeg
+---
+
+In 2018 my company launched [Swift Heroes](https://swiftheroes.com), a conference for international Swift devs.
+
+We came from many years organising Droidcon (the international Android conference) and I was personally waiting for years to be able to confront with other developers and try to have a public speech for the very first time in my life.
+
+I chose one of my favorite topics, **[RxSwift](https://github.com/ReactiveX/RxSwift)**, and how devs could apply it from a UI perspective, rather than focusing on "normal" concepts like API calls and stuff.
+
+With the organizing committee I chose a small room rather than the main one, as I thought not so many people would have come to listen to "an outsider" while on the other stage a more famous speaker than me was speaking. I couldn't be more wrong than that, as the room was quickly filled by more than 200 people. 
+
+This was my face when I saw the whole scene from the stage (right after a mild panic attack)
+
+![panic at swift heroes 2018](/assets/images/swift_heroes_2018.jpeg)
+
+I think the contents were really good, while I could have surely have done something more for my english speaking (lesson learned for 2019 :) ) 
+
+Demo repository can be found on [my Github](https://github.com/stefanomondino/RxSwiftForUI)
+
+## RxSwift for UI - the tips & tricks your views were waiting for
+
+{% include video id="mLXfpg0h_HU" provider="youtube" %}
+
+I was also interviewed by a local television right after my talk. In this mostly absurd interview, I've been talking about how sometimes I used to "code in my sleep". I still do, actually.
+
+{% include video id="Q7AY7SAD4RQ" provider="youtube" %}

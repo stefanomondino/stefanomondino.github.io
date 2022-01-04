@@ -1,0 +1,9 @@
+main:
+  - title: "Posts"
+    url: /posts/
+  - title: "Public speaking"
+    url: /speaking/
+  # - title: "Tags"
+  #   url: /tags/
+  - title: "About me"
+    url: /about

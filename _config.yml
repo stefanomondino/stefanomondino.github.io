@@ -86,6 +86,15 @@ author:
   - label: "Github"
     icon: "fab fa-fw fa-github-square"
     url: "https://github.com/stefanomondino"
+  - label: "Instagram"
+    icon: "fab fa-fw fa-instagram-square"
+    url: "https://instagram.com/puntoste"
+  - label: "Facebook"
+    icon: "fab fa-fw fa-facebook-square"
+    url: "https://www.facebook.com/stefano.mondino"
+  - label: "LinkedIn"
+    icon: "fab fa-fw fa-linkedin"
+    url: "https://www.linkedin.com/in/stefanomondino"
 
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -100,6 +109,14 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+social:
+  links:
+  - "https://twitter.com/puntoste"
+  - "https://www.facebook.com/stefano.mondino"
+  - "https://github.com/stefanomondino"
+  - "https://instagram.com/puntoste"
+  - "https://www.linkedin.com/in/stefanomondino"
 # analytics:
 #   provider: "google-universal"
 #   google:

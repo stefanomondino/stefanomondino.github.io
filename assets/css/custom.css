@@ -1,0 +1,175 @@
+/* =============================================
+   Custom Overrides — Indigo/Emerald Palette
+   ============================================= */
+
+/* --- Color Palette: Dark Theme (default) --- */
+:root {
+  --accent-primary: #818cf8;
+  --accent-mid-purple: #a5b4fc;
+  --accent-light-purple: #c7d2fe;
+  --accent-secondary: #34d399;
+
+  --accent-hover: #a5b4fc;
+  --accent-primary-rgba-03: rgba(129, 140, 248, 0.3);
+  --accent-primary-rgba-05: rgba(129, 140, 248, 0.5);
+  --accent-light-purple-rgba-01: rgba(199, 210, 254, 0.1);
+  --accent-light-purple-rgba-03: rgba(199, 210, 254, 0.3);
+  --accent-mid-purple-rgba-05: rgba(165, 180, 252, 0.05);
+  --accent-mid-purple-rgba-01: rgba(165, 180, 252, 0.1);
+  --accent-mid-purple-rgba-02: rgba(165, 180, 252, 0.2);
+  --tag-color: var(--accent-light-purple);
+  --glass-border: rgba(129, 140, 248, 0.12);
+}
+
+/* --- Color Palette: Light Theme --- */
+[data-theme="light"] {
+  --accent-primary: #4338ca;
+  --accent-mid-purple: #4f46e5;
+  --accent-light-purple: #6366f1;
+  --accent-secondary: #059669;
+  --accent-hover: #4f46e5;
+  --accent-primary-rgba-03: rgba(67, 56, 202, 0.3);
+  --accent-primary-rgba-05: rgba(67, 56, 202, 0.5);
+  --accent-light-purple-rgba-01: rgba(99, 102, 241, 0.1);
+  --accent-light-purple-rgba-03: rgba(99, 102, 241, 0.3);
+  --accent-mid-purple-rgba-05: rgba(79, 70, 229, 0.05);
+  --accent-mid-purple-rgba-01: rgba(79, 70, 229, 0.1);
+  --accent-mid-purple-rgba-02: rgba(79, 70, 229, 0.2);
+  --tag-bg: rgba(79, 70, 229, 0.1);
+  --tag-color: #4338ca;
+  --glass-border: rgba(67, 56, 202, 0.2);
+  --glass-surface: rgba(238, 242, 255, 0.6);
+  --bg-secondary: var(--glass-surface);
+}
+
+/* --- Light theme: fix background gradient to use indigo tints --- */
+[data-theme="light"] body {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(224, 231, 255, 0.3) 40%,
+    #ffffff 100%
+  );
+}
+
+/* --- Hero: Gradient text on title line 1 --- */
+.hero-title-line1 {
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Hero: Blinking cursor on subtitle --- */
+.hero-subtitle::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: var(--accent-secondary);
+  font-weight: 400;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* --- Hero: Avatar rounded square --- */
+.hero-logo {
+  border-radius: 16px;
+}
+
+/* --- Post Cards: Accent border + slide on hover --- */
+.post-card {
+  border-left: 3px solid var(--border-color);
+  transition:
+    all var(--transition-base),
+    border-left-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.post-card:hover {
+  border-left-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+/* --- Post Cards: Image zoom on hover --- */
+.post-image img {
+  transition: transform var(--transition-slow);
+}
+
+.post-card:hover .post-image img {
+  transform: scale(1.05);
+}
+
+/* --- Post Cards: Staggered fade-in --- */
+.post-card {
+  animation: fadeSlideUp 0.5s ease-out both;
+}
+
+.post-card:nth-child(1) { animation-delay: 0s; }
+.post-card:nth-child(2) { animation-delay: 0.08s; }
+.post-card:nth-child(3) { animation-delay: 0.16s; }
+.post-card:nth-child(4) { animation-delay: 0.24s; }
+.post-card:nth-child(5) { animation-delay: 0.32s; }
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Social Links: Glow + lift on hover --- */
+.social-link {
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+}
+
+/* --- Tags: Subtle lift on hover --- */
+.post-tag {
+  transition: all var(--transition-fast);
+}
+
+.post-tag:hover {
+  transform: translateY(-1px);
+}
+
+/* --- Custom Scrollbar (Webkit) --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary-rgba-03);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary-rgba-05);
+}
+
+/* --- Accessibility: Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .post-card,
+  .social-link,
+  .post-tag,
+  .hero-logo,
+  .post-image img {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-subtitle::after {
+    animation: none;
+  }
+}

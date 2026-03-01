@@ -1,0 +1,4 @@
+[tools]
+node = "22"
+hugo = "latest"
+"github-cli" = "2.67.0"

@@ -1,0 +1,84 @@
+{{ define "main" }}
+  <div class="single-post-wrapper">
+    <article class="single-post">
+      {{ partial "post-image-single.html" . }}
+
+      <header class="post-header">
+        <h1 class="post-title-main">{{ .Title }}</h1>
+
+        {{ if .Description }}
+          <p class="post-description-main">{{ .Description }}</p>
+        {{ end }}
+
+        {{ partial "post-meta.html" . }}
+
+        {{/* Speaking metadata: event and location */}}
+        {{ if or .Params.event .Params.location }}
+          <div class="speaking-meta" style="margin-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9em; color: var(--color-text-secondary, #666);">
+            {{ with .Params.event }}
+              <span>📍 {{ . }}</span>
+            {{ end }}
+            {{ with .Params.location }}
+              <span>🌍 {{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </header>
+
+      <div class="post-content-main">
+        {{ .Content }}
+      </div>
+
+      {{/* Speaking links: slides and video */}}
+      {{ if or .Params.slides_url .Params.video_url }}
+        <div class="speaking-links" style="margin: 1.5rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+          {{ with .Params.slides_url }}
+            <a href="{{ . }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem; border: 1px solid var(--color-border, #ddd); border-radius: 0.4rem; text-decoration: none; font-size: 0.9em;">
+              📄 Slide
+            </a>
+          {{ end }}
+          {{ with .Params.video_url }}
+            <a href="{{ . }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem; border: 1px solid var(--color-border, #ddd); border-radius: 0.4rem; text-decoration: none; font-size: 0.9em;">
+              🎬 Video
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ if .Params.tags }}
+        <footer class="post-footer">
+          <div class="post-tags-footer">
+            <span class="tags-label">{{ i18n "tags" }}:</span>
+            {{ range .Params.tags }}
+              <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="post-tag">{{ . }}</a>
+            {{ end }}
+          </div>
+        </footer>
+      {{ end }}
+
+      <nav class="post-navigation" aria-label="Post navigation">
+        {{ with .PrevInSection }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="nav-link nav-prev"
+            aria-label="Previous post: {{ .Title }}">
+            <span class="nav-label">{{ i18n "navPrev" }}</span>
+            <span class="nav-title">{{ .Title }}</span>
+          </a>
+        {{ end }}
+
+        {{ with .NextInSection }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="nav-link nav-next"
+            aria-label="Next post: {{ .Title }}">
+            <span class="nav-label">{{ i18n "navNext" }}</span>
+            <span class="nav-title">{{ .Title }}</span>
+          </a>
+        {{ end }}
+      </nav>
+    </article>
+
+    {{ partial "toc.html" . }}
+  </div>
+{{ end }}

@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <div class="list-container">
+    <header class="list-header">
+      <h1 class="list-title">
+        <span class="list-title-line2">SPEAKING</span>
+      </h1>
+      {{ if .Description }}
+        <p class="list-description">{{ .Description }}</p>
+      {{ end }}
+    </header>
+
+    <div class="posts-list" id="posts-container">
+      {{ range .Paginator.Pages }}
+        {{ $dataTags := "" }}
+        {{ if .Params.tags }}
+          {{ $dataTags = delimit .Params.tags "," }}
+        {{ end }}
+        {{ partial "post-card.html" (dict
+          "page" .
+          "limit" 3
+          "dataYearMonth" (.Date.Format "2006-01")
+          "dataTags" $dataTags)
+        }}
+      {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ partial "pagination.html" . }}
+
+    <!-- Navigation links -->
+    {{ partial "back-to-home.html" . }}
+  </div>
+{{ end }}

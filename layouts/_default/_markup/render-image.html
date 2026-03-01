@@ -1,0 +1,31 @@
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+
+{{- $resource := .Page.Resources.Get $src -}}
+{{- if not $resource -}}
+  {{- $resource = resources.Get (strings.TrimPrefix "/" $src) -}}
+{{- end -}}
+
+{{- if $resource -}}
+  {{- $resized := $resource.Process "fit 800x600 webp q80" -}}
+  <figure>
+    <img
+      src="{{ $resized.RelPermalink }}"
+      alt="{{ $alt }}"
+      {{ with $title }}title="{{ . }}"{{ end }}
+      loading="lazy"
+      width="{{ $resized.Width }}"
+      height="{{ $resized.Height }}">
+    {{- with $title }}<figcaption>{{ . }}</figcaption>{{ end -}}
+  </figure>
+{{- else -}}
+  <figure>
+    <img
+      src="{{ $src }}"
+      alt="{{ $alt }}"
+      {{ with $title }}title="{{ . }}"{{ end }}
+      loading="lazy">
+    {{- with $title }}<figcaption>{{ . }}</figcaption>{{ end -}}
+  </figure>
+{{- end -}}

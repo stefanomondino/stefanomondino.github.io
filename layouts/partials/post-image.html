@@ -1,0 +1,26 @@
+{{ $resolved := partial "post-image-resolve.html" . }}
+{{ $image := $resolved.image }}
+{{ $imageResource := $resolved.imageResource }}
+
+{{ if $image }}
+  <div class="post-image">
+    <a href="{{ .RelPermalink }}" onclick="event.stopPropagation();" aria-label="{{ i18n "readMore" }} {{ .Title }}">
+      {{ if $imageResource }}
+        {{ $resized := $imageResource.Process "fit 900x600 webp q80" }}
+        <img
+          src="{{ $resized.RelPermalink }}"
+          alt="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }} - Featured image{{ end }}"
+          loading="lazy"
+          width="{{ $resized.Width }}"
+          height="{{ $resized.Height }}">
+      {{ else }}
+        <img
+          src="{{ $image | relURL }}"
+          alt="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }} - Featured image{{ end }}"
+          loading="lazy"
+          width="1200"
+          height="630">
+      {{ end }}
+    </a>
+  </div>
+{{ end }}

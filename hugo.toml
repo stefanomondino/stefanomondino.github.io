@@ -1,0 +1,95 @@
+baseURL = 'https://stefanomondino.com/'
+theme = "mana"
+defaultContentLanguage = "it"
+title = "Stefano Mondino"
+
+[pagination]
+  pageSize = 10
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 6
+    ordered = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    noClasses = false
+    style = "catppuccin-macchiato"
+
+[outputs]
+  home = ["HTML", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  enableIntegrity = false
+  description = "iOS developer · Swift enthusiast · speaker · musician"
+  author = "Stefano Mondino"
+  heroTitleLine1 = "STEFANO"
+  heroTitleLine2 = "MONDINO"
+  footerText = "Built with Hugo and Mana theme"
+
+  [params.social]
+    github = "https://github.com/stefanomondino"
+    linkedin = "https://www.linkedin.com/in/stefanomondino"
+    instagram = "https://www.instagram.com/puntoste"
+    youtube = "https://www.youtube.com/@mrpuntoste"
+    twitter = "puntoste"
+
+
+  [params.avatar.home]
+    assetPath = "images/about/IMG_0403.jpeg"
+    enableResize = true
+  [params.avatar.about]
+    assetPath = "images/about/IMG_0403.jpeg"
+    enableResize = true
+
+  [params.buyMeACoffee]
+    enabled = false
+
+  [params.codeHighlight]
+    darkTheme = "catppuccin-macchiato"
+    lightTheme = "catppuccin-frappe"
+
+  [params.copyright]
+    startYear = 2025
+    owner = "Stefano Mondino"
+
+  [params.admonitions]
+    alertStyle = "favicon"
+
+[[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[menus.main]]
+  name = "Posts"
+  pageRef = "/posts"
+  weight = 20
+
+[[menus.main]]
+  name = "Speaking"
+  pageRef = "/speaking"
+  weight = 25
+
+[[menus.main]]
+  name = "Tags"
+  pageRef = "/tags"
+  weight = 30
+
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 40

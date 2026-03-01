@@ -1,0 +1,95 @@
+/* About Page */
+
+.about-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent) 1;
+}
+
+.about-page-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-primary);
+  margin-bottom: var(--spacing-lg);
+  transition: all var(--transition-base);
+}
+
+.about-page-avatar:hover {
+  transform: scale(1.05);
+}
+
+.about-page-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.about-page-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin: 0 0 var(--spacing-lg) 0;
+  font-style: italic;
+}
+
+.about-page-social {
+  margin-top: var(--spacing-md);
+}
+
+.about-content-full {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.about-content-full h2 {
+  font-size: 1.75rem;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.about-content-full p {
+  margin-bottom: var(--spacing-md);
+}
+
+.about-content-full a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.about-content-full a:hover {
+  color: var(--accent-hover);
+}
+
+/* Figures in about page */
+.about-content-full figure {
+  max-width: 480px;
+  margin: var(--spacing-lg) auto;
+  text-align: center;
+}
+
+.about-content-full figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-content-full figcaption {
+  margin-top: var(--spacing-sm, 0.5rem);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}

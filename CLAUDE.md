@@ -1,58 +1,58 @@
 # Stefano Mondino - Hugo Site
 
-Sito personale costruito con Hugo e il tema [Mana](https://github.com/Livour/hugo-mana-theme).
+Personal website built with Hugo and the [Mana](https://github.com/Livour/hugo-mana-theme) theme.
 
 ## Stack
 
-- **Hugo** v0.157+ (Extended) - gestito tramite `mise`
-- **Node** 22 - gestito tramite `mise`
-- **Tema**: Mana (submodule git in `themes/mana`)
+- **Hugo** v0.157+ (Extended) - managed via `mise`
+- **Node** 22 - managed via `mise`
+- **Theme**: Mana (git submodule in `themes/mana`)
 
-## Comandi
+## Commands
 
-- `mise exec -- hugo server -D` — avvia il server di sviluppo (con draft)
-- `mise exec -- hugo` — build del sito in `public/`
-- `mise install` — installa le dipendenze (hugo + node) tramite mise
+- `mise exec -- hugo server -D` — start the dev server (with drafts)
+- `mise exec -- hugo` — build the site into `public/`
+- `mise install` — install dependencies (hugo + node) via mise
 
-## Struttura del progetto
+## Project Structure
 
 ```
-hugo.toml              # Configurazione principale del sito
-mise.toml              # Gestione versioni strumenti (hugo, node)
+hugo.toml              # Main site configuration
+mise.toml              # Tool version management (hugo, node)
 content/
-  posts/               # Articoli del blog (markdown)
-  about/index.md       # Pagina About
-static/                # File statici (favicon, immagini non processate)
-assets/images/         # Immagini processate da Hugo (resize, ottimizzazione)
-themes/mana/           # Tema Mana (submodule git - NON modificare direttamente)
+  posts/               # Blog articles (markdown)
+  about/index.md       # About page
+static/                # Static files (favicon, unprocessed images)
+assets/images/         # Hugo-processed images (resize, optimization)
+themes/mana/           # Mana theme (git submodule - DO NOT modify directly)
 ```
 
-## Convenzioni contenuti
+## Content Conventions
 
-- I post vanno in `content/posts/` come file `.md`
-- Front matter obbligatorio: `title`, `date`, `draft`, `tags`
-- La pagina About usa layout `about` ed e' in `content/about/index.md`
-- Lingua predefinita: italiano (`it`)
+- Posts go in `content/posts/` as `.md` files
+- Required front matter: `title`, `date`, `draft`, `tags`
+- The About page uses the `about` layout and lives at `content/about/index.md`
+- Default language: English (`en`)
 
-## Tema Mana - Note
+## Mana Theme - Notes
 
-- Il tema e' un git submodule: non modificare file dentro `themes/mana/`
-- Per personalizzare layout, creare override in `layouts/` alla root del progetto
-- Per personalizzare CSS, creare file in `assets/css/` alla root
-- Supporta admonitions stile GitHub/Obsidian (NOTE, TIP, WARNING, ecc.)
-- Supporta dark/light mode toggle
-- La ricerca full-text richiede output JSON (gia' configurato in `hugo.toml`)
+- The theme is a git submodule: never modify files inside `themes/mana/`
+- To customize layouts, create overrides in `layouts/` at the project root
+- To customize CSS, create files in `assets/css/` at the root
+- Supports GitHub/Obsidian-style admonitions (NOTE, TIP, WARNING, etc.)
+- Supports dark/light mode toggle
+- Full-text search requires JSON output (already configured in `hugo.toml`)
 
-## Configurazione
+## Configuration
 
-- `hugo.toml` contiene tutta la configurazione: menu, params, social links
-- Single language (italiano), single content folder
-- Syntax highlighting con temi Catppuccin
+- `hugo.toml` contains all configuration: menu, params, social links
+- Single language (English), single content folder
+- Syntax highlighting with Catppuccin themes
 
-## Regole per Claude
+## Rules for Claude
 
-- Usa sempre `mise exec -- hugo` per eseguire comandi hugo
-- Non modificare mai file dentro `themes/mana/`
-- Per override di template, copia il file da `themes/mana/layouts/` a `layouts/` mantenendo lo stesso path
-- I contenuti sono in italiano salvo diversa indicazione
-- Dopo modifiche alla configurazione o ai layout, verifica con `mise exec -- hugo` che il build funzioni
+- Always use `mise exec -- hugo` to run hugo commands
+- Never modify files inside `themes/mana/`
+- To override templates, copy the file from `themes/mana/layouts/` to `layouts/` keeping the same path
+- Content is in English unless otherwise specified
+- After changes to configuration or layouts, verify with `mise exec -- hugo` that the build works

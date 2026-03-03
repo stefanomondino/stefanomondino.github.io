@@ -1,0 +1,12 @@
+{{ $count := .Get "count" | default 3 }}
+<section class="posts-section">
+  <h2 class="posts-title">Recent Talks</h2>
+  <div class="posts-list">
+    {{ range where site.RegularPages "Type" "speaking" | first $count }}
+      {{ partial "post-card.html" (dict "page" . "limit" 3) }}
+    {{ end }}
+  </div>
+  <div style="text-align: center; margin-top: 1rem;">
+    <a href="/speaking/" style="color: var(--accent-primary); text-decoration: underline; text-underline-offset: 2px;">View all talks &rarr;</a>
+  </div>
+</section>

@@ -158,6 +158,18 @@
   background: var(--accent-primary-rgba-05);
 }
 
+/* --- AI-assisted banner --- */
+.ai-banner {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--accent-secondary);
+  background: var(--accent-mid-purple-rgba-05);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 /* --- Accessibility: Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
   .post-card,

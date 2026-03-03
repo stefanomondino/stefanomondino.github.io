@@ -1,10 +1,11 @@
 ---
 title: "From Payload CMS to Hugo: Writing Blog Posts as Code"
 date: 2026-03-01
-draft: true
+draft: false
+ai: true
 tags: ["Hugo", "Blogging", "AI", "Workflow"]
 description: "Why I moved from Payload CMS to Hugo, and how writing blog posts in VS Code with AI assistance changed my workflow for the better."
-image: "images/about/IMG_0403.jpeg"
+image: "images/posts/from-payload-to-hugo.png"
 ---
 
 For the past while, my personal site ran on [Payload CMS](https://payloadcms.com/) — a powerful, developer-friendly headless CMS built on Node.js. It served me well, but over time I started feeling friction in my workflow. So I switched to [Hugo](https://gohugo.io/), a static site generator where every post is just a Markdown file in a folder.
@@ -19,7 +20,7 @@ Nothing, really. Payload is an excellent CMS. It gives you a full admin panel, f
 - **Context switching**: writing a post meant opening a browser, navigating to the admin panel, and using a rich-text editor that — while decent — was never *my* editor.
 - **AI-unfriendly**: the content lived in a database. I couldn't easily hand a blog post to an AI assistant and say "help me improve this paragraph" without copy-pasting back and forth.
 
-For a team or a content-heavy project, these tradeoffs make sense. For a solo developer's blog? Not so much.
+The final straw was when I tried to integrate AI features into Payload's editor. I went down a rabbit hole of plugins, Node.js dependencies, and custom configurations — and the result was still a fraction of what I get for free by just writing Markdown in VS Code with Claude. That's when I realized the tool was working against me, not for me.
 
 ## Why Hugo?
 
@@ -62,7 +63,7 @@ There's no admin panel to log into, no deploy to babysit. It's just files, Git, 
 To be fair, this setup isn't for everyone:
 
 - **No visual editor.** If you prefer WYSIWYG editing, Hugo's Markdown-only approach might feel limiting.
-- **No built-in media management.** Images go in a folder. There's no drag-and-drop upload or automatic optimization (though Hugo does have solid image processing pipelines).
+- **No visual media management.** Hugo can resize, crop, and optimize images — but there's no UI for it. No drag-and-drop upload, no visual crop tool. You configure image processing in templates or shortcodes, which is powerful but requires upfront setup.
 - **Theme customization requires Go templates.** Hugo's templating language has a learning curve if you need to go beyond what your theme provides.
 
 For me, these tradeoffs are worth it. I'd rather have full control in my editor than convenience in a browser.
@@ -72,3 +73,5 @@ For me, these tradeoffs are worth it. I'd rather have full control in my editor 
 The shift from Payload to Hugo wasn't really about which tool is "better." It was about aligning my blogging workflow with the way I already work: in a code editor, with version control, and increasingly, with AI assistance.
 
 If you're a developer who blogs (or wants to start), and you find yourself fighting your CMS more than writing, consider going static. The simplicity might surprise you — and the AI integration possibilities will only keep getting better.
+
+And yes, there's a certain irony here: the vast majority of this very post was written by Claude. Which, if anything, proves the point — the workflow works. In the interest of transparency, every post on this site that was written with AI assistance is automatically flagged with a banner. I think that's the least you can do when the machine is doing most of the typing.

@@ -54,32 +54,28 @@
   </section>
 
   <div class="home-container">
-    {{ with .Content }}
-      <style>
-        .intro-section a {
-          color: var(--accent-primary);
-          text-decoration: underline;
-          text-decoration-color: var(--accent-primary);
-          text-underline-offset: 2px;
-        }
-        .intro-section a:hover {
-          text-decoration-color: var(--text-primary);
-        }
-      </style>
-      <section class="intro-section" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8; max-width: 720px;">
-        {{ . }}
-      </section>
-    {{ end }}
-
-    <!-- Posts List -->
-    <section class="posts-section">
-      <h2 class="posts-title">{{ i18n "recentPosts" }}</h2>
-
-      <div class="posts-list">
-        {{ range where site.RegularPages "Type" "posts" | first 10 }}
-          {{ partial "post-card.html" (dict "page" . "limit" 3) }}
-        {{ end }}
-      </div>
-    </section>
+    <style>
+      .home-container a {
+        color: var(--accent-primary);
+        text-decoration: underline;
+        text-decoration-color: var(--accent-primary);
+        text-underline-offset: 2px;
+      }
+      .home-container a:hover {
+        text-decoration-color: var(--text-primary);
+      }
+      .home-intro {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 720px;
+      }
+      .home-intro h1 {
+        margin-top: 3rem;
+      }
+    </style>
+    <div class="home-intro">
+      {{ .Content }}
+    </div>
   </div>
 {{ end }}

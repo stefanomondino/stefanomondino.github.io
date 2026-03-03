@@ -91,6 +91,20 @@
   transform: translateX(4px);
 }
 
+/* --- Post Images: 16:9 aspect ratio --- */
+.post-image,
+.post-image-single {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.post-image img,
+.post-image-single img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* --- Post Cards: Image zoom on hover --- */
 .post-image img {
   transition: transform var(--transition-slow);

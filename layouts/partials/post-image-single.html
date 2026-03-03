@@ -5,7 +5,7 @@
 {{ if $image }}
   <div class="post-image-single">
     {{ if $imageResource }}
-      {{ $resized := $imageResource.Process "fit 1200x630 webp q80" }}
+      {{ $resized := $imageResource.Process "fill 1200x675 webp q80" }}
       <img
         src="{{ $resized.RelPermalink }}"
         alt="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }} - Featured image{{ end }}"

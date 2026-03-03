@@ -6,7 +6,7 @@
   <div class="post-image">
     <a href="{{ .RelPermalink }}" onclick="event.stopPropagation();" aria-label="{{ i18n "readMore" }} {{ .Title }}">
       {{ if $imageResource }}
-        {{ $resized := $imageResource.Process "fit 900x600 webp q80" }}
+        {{ $resized := $imageResource.Process "fill 900x506 webp q80" }}
         <img
           src="{{ $resized.RelPermalink }}"
           alt="{{ if .Description }}{{ .Description }}{{ else }}{{ .Title }} - Featured image{{ end }}"

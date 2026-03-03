@@ -1,0 +1,82 @@
+{{- $image := "" -}}
+{{- $imageURL := "" -}}
+
+{{/* Try page-level image from front matter */}}
+{{- if .Params.image -}}
+  {{- $res := resources.Get .Params.image -}}
+  {{- if $res -}}
+    {{- $resized := $res.Fit "1200x630" -}}
+    {{- $imageURL = $resized.Permalink -}}
+  {{- else -}}
+    {{- $imageURL = .Params.image | absURL -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Fallback to site default OG image */}}
+{{- if not $imageURL -}}
+  {{- if site.Params.ogImage -}}
+    {{- $res := resources.Get site.Params.ogImage -}}
+    {{- if $res -}}
+      {{- $resized := $res.Fit "1200x630" -}}
+      {{- $imageURL = $resized.Permalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $title := "" -}}
+{{- if .IsHome -}}
+  {{- $title = site.Title -}}
+{{- else -}}
+  {{- $title = printf "%s | %s" .Title site.Title -}}
+{{- end -}}
+
+{{- $description := "" -}}
+{{- if .Description -}}
+  {{- $description = .Description -}}
+{{- else if .IsHome -}}
+  {{- $description = site.Params.description -}}
+{{- else -}}
+  {{- $description = .Summary | plainify | truncate 160 -}}
+{{- end -}}
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+{{- if $imageURL -}}
+  <meta property="og:image" content="{{ $imageURL }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+{{- end -}}
+{{- if .IsPage -}}
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  <meta
+    property="article:modified_time"
+    content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- if .Params.author -}}
+    <meta property="article:author" content="{{ .Params.author }}">
+  {{- end -}}
+  {{- if .Params.tags -}}
+    {{- $firstTag := index .Params.tags 0 -}}
+    <meta property="article:section" content="{{ $firstTag }}">
+    {{- range .Params.tags -}}
+      <meta property="article:tag" content="{{ . }}">
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="{{ if $imageURL }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{- if $imageURL -}}
+  <meta name="twitter:image" content="{{ $imageURL }}">
+{{- end -}}
+{{- if site.Params.social.twitter -}}
+  <meta name="twitter:site" content="@{{ site.Params.social.twitter }}">
+  <meta name="twitter:creator" content="@{{ site.Params.social.twitter }}">
+{{- end -}}

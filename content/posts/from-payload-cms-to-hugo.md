@@ -3,8 +3,8 @@ title: "From Payload CMS to Hugo: Writing Blog Posts as Code"
 date: 2026-03-01
 draft: false
 ai: true
-tags: ["Hugo", "Blogging", "AI", "Workflow"]
-description: "Why I moved from Payload CMS to Hugo, and how writing blog posts in VS Code with AI assistance changed my workflow for the better."
+tags: ["Hugo", "Blogging", "AI", "Workflow", "GitHub Pages", "Payload CMS"]
+description: "Why I moved from Payload CMS to Hugo, and how writing blog posts in VS Code with AI assistance changed my workflow for the better — including deploying for free and writing from my phone."
 image: "images/posts/from-payload-to-hugo.png"
 ---
 
@@ -20,6 +20,10 @@ Nothing, really. Payload is an excellent CMS. It gives you a full admin panel, f
 - **Context switching**: writing a post meant opening a browser, navigating to the admin panel, and using a rich-text editor that — while decent — was never *my* editor.
 - **AI-unfriendly**: the content lived in a database. I couldn't easily hand a blog post to an AI assistant and say "help me improve this paragraph" without copy-pasting back and forth.
 
+To be clear: Payload wasn't costing me anything. I had it running on [Vercel](https://vercel.com/)'s free tier with a [Neon](https://neon.tech/) serverless PostgreSQL database — also free. The whole stack, admin panel included, at zero cost. If you need a proper CMS with structured content and user roles, that combo is genuinely hard to beat.
+
+But the cost was never the problem. The friction was.
+
 The final straw was when I tried to integrate AI features into Payload's editor. I went down a rabbit hole of plugins, Node.js dependencies, and custom configurations — and the result was still a fraction of what I get for free by just writing Markdown in VS Code with Claude. That's when I realized the tool was working against me, not for me.
 
 ## Why Hugo?
@@ -32,6 +36,7 @@ What made it click for me:
 - **The editor is VS Code.** I already spend most of my day here. Writing a blog post feels like writing code — because it *is* just writing in a text file.
 - **Builds are instant.** Hugo compiles the entire site in milliseconds. No waiting, no build pipelines to debug.
 - **Zero runtime dependencies.** The output is plain HTML/CSS/JS. I deploy to GitHub Pages with a simple workflow and forget about it.
+- **Also free.** GitHub Pages hosts the site, GitHub Actions builds it. I push to `main`, a workflow runs `hugo --gc --minify`, and the site is live in about a minute. No Vercel, no database, no environment variables. The whole thing is about 60 lines of YAML that I set up once and never touched again.
 
 ## The real game-changer: AI in the editor
 
@@ -44,7 +49,9 @@ With Claude integrated in VS Code, I can:
 - **Generate front matter and metadata.** Tags, descriptions, summaries — the tedious parts that I used to skip or half-do.
 - **Work with context.** Because the post lives alongside my code, Claude can reference my project structure, my other posts, even my site configuration. It understands the full picture.
 
-With Payload, this kind of interaction required constant copy-pasting between the browser and the editor. With Hugo, it's seamless: the file is right there.
+And here's the part I really didn't see coming: I can do all of this from my phone. Claude works on mobile — both the app and the web. Since my posts are just text, I can start a draft in a conversation with Claude while I'm on the bus, refine it over a coffee break, and have a full Markdown file ready to commit. With Payload, writing from my phone meant loading a CMS admin panel on a small screen. It technically worked, but I never actually did it.
+
+With Payload, this kind of interaction required constant copy-pasting between the browser and the editor. With Hugo, it's seamless: the file is right there — and it doesn't matter what device I'm on.
 
 ## The workflow now
 

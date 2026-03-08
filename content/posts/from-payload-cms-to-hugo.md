@@ -24,7 +24,7 @@ To be clear: Payload wasn't costing me anything. I had it running on [Vercel](ht
 
 But the cost was never the problem. The friction was.
 
-The final straw was when I tried to integrate AI features into Payload's editor. I went down a rabbit hole of plugins, Node.js dependencies, and custom configurations — and the result was still a fraction of what I get for free by just writing Markdown in VS Code with Claude. That's when I realized the tool was working against me, not for me.
+The final straw was when I tried to use Payload's built-in AI assistant. It's there — you can configure it with OpenAI, Claude, and others. On paper, it sounds great. In practice, I spent hours trying to make it work, went through database migrations, fought with configurations, asked AI to help me configure AI, and after a fair amount of swearing, I still couldn't get it running. And even if I had, the result would have been a chat widget inside a rich-text editor — useful, but a far cry from what I get for free by just writing Markdown in VS Code with Claude. That's when I realized the tool was working against me, not for me.
 
 ## Why Hugo?
 

@@ -72,9 +72,10 @@
   50% { opacity: 0; }
 }
 
-/* --- Hero: Avatar rounded square --- */
+/* --- Hero: Avatar rounded square, no float animation --- */
 .hero-logo {
   border-radius: 16px;
+  animation: none;
 }
 
 /* --- Post Cards: Accent border + slide on hover --- */

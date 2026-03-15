@@ -1,12 +1,34 @@
+{{- $src := .Get "src" -}}
+{{- $alt := "" -}}
+{{- if .Get "alt" -}}{{- $alt = .Get "alt" -}}{{- else if .Get "caption" -}}{{- $alt = .Get "caption" | markdownify | plainify -}}{{- end -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $resourcePath := strings.TrimPrefix "/" $src -}}
+{{- $img := resources.Get $resourcePath -}}
+
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
   {{- if .Get "link" -}}
     <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
   {{- end -}}
-  <img src="{{ .Get "src" }}"
-       {{- if or (.Get "alt") (.Get "caption") }} alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"{{ end -}}
-       {{- with .Get "width" }} width="{{ . }}"{{ end -}}
-       {{- with .Get "height" }} height="{{ . }}"{{ end -}}
-  >
+
+  {{- if $img -}}
+    {{- $webp := $img.Process "webp" -}}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+      <img src="{{ $img.RelPermalink }}"
+           {{- with $alt }} alt="{{ . }}"{{ end -}}
+           {{- with $width }} width="{{ . }}"{{ end -}}
+           {{- with $height }} height="{{ . }}"{{ end -}}
+      >
+    </picture>
+  {{- else -}}
+    <img src="{{ $src }}"
+         {{- with $alt }} alt="{{ . }}"{{ end -}}
+         {{- with $width }} width="{{ . }}"{{ end -}}
+         {{- with $height }} height="{{ . }}"{{ end -}}
+    >
+  {{- end -}}
+
   {{- if .Get "link" }}</a>{{ end -}}
   {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
     <figcaption>

@@ -1,0 +1,85 @@
+# Alert/Admonition
+note = "Nota"
+tip = "Consiglio"
+important = "Importante"
+warning = "Attenzione"
+caution = "Cautela"
+info = "Info"
+success = "Successo"
+question = "Domanda"
+danger = "Pericolo"
+bug = "Bug"
+example = "Esempio"
+
+# Header & navigation
+menu = "Menu"
+search = "Cerca"
+searchPlaceholder = "Cerca..."
+clearSearch = "Cancella ricerca"
+closeSearch = "Chiudi ricerca"
+toggleMenu = "Apri/chiudi menu"
+closeMenu = "Chiudi menu"
+toggleTheme = "Cambia tema"
+language = "Lingua"
+
+# Accessibility
+skipToMain = "Vai al contenuto principale"
+scrollToTop = "Torna in cima"
+
+# Home
+recentPosts = "Articoli recenti"
+
+# List & filters
+posts = "Articoli"
+filters = "Filtri"
+searchTags = "Cerca tag..."
+tagsLabel = "Tag"
+yearMonth = "Anno e mese"
+allDates = "Tutte le date"
+clearFilters = "Rimuovi filtri"
+
+# Pagination
+pageOf = "Pagina %s di %s"
+postSingular = "articolo"
+postPlural = "articoli"
+pageSingular = "pagina"
+pagePlural = "pagine"
+postsOnThisPage = "in questa pagina"
+paginationFirst = "Prima"
+paginationPrev = "Precedente"
+paginationNext = "Successiva"
+paginationLast = "Ultima"
+
+# Navigation links
+backToHome = "Torna alla home"
+allTags = "Tutti i tag"
+readMore = "Leggi di più"
+
+# Archive
+archive = "Archivio"
+
+# Single post
+tags = "Tag"
+navPrev = "Precedente"
+navNext = "Successivo"
+
+# Post meta
+wordCount = "parole"
+readingTime = "min"
+
+# Table of contents
+tableOfContents = "Indice"
+toggleToc = "Mostra/nascondi indice"
+
+# Tags page
+tagsHelp = "Clicca un tag per vedere gli articoli correlati"
+searchNoResults = "Nessun risultato trovato"
+searchNoTagsFound = "Nessun tag trovato"
+
+# Buy Me a Coffee
+buyMeACoffeeDescription = "Supportami su Buy me a coffee!"
+
+# 404 page
+404Title = "Questa pagina non esiste"
+404DefaultMessage = "Spiacente, la pagina che cerchi non è stata trovata."
+404ReturnHome = "Torna alla pagina principale"

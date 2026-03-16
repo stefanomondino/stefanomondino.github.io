@@ -197,6 +197,27 @@
   line-height: 1.5;
 }
 
+/* --- Language switcher: hidden until translations are ready --- */
+.language-switcher {
+  display: none;
+}
+
+/* --- Inline code: dark background + accent color --- */
+.post-content-main :not(pre) > code {
+  background-color: rgba(15, 23, 42, 0.75);
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-mid-purple-rgba-02);
+  border-radius: 4px;
+  padding: 0.15em 0.45em;
+  font-size: 0.875em;
+}
+
+[data-theme="light"] .post-content-main :not(pre) > code {
+  background-color: rgba(238, 242, 255, 0.85);
+  color: var(--accent-primary);
+  border-color: var(--accent-light-purple-rgba-03);
+}
+
 /* --- Accessibility: Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
   .post-card,

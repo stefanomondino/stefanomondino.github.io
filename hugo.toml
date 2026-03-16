@@ -1,6 +1,7 @@
 baseURL = 'https://stefanomondino.com/'
 theme = "mana"
-defaultContentLanguage = "it"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 title = "Stefano Mondino"
 
 [pagination]
@@ -34,7 +35,6 @@ title = "Stefano Mondino"
 
 [params]
   enableIntegrity = false
-  description = "iOS developer · Swift enthusiast · speaker · musician"
   author = "Stefano Mondino"
   heroTitleLine1 = "STEFANO"
   heroTitleLine2 = "MONDINO"
@@ -47,7 +47,6 @@ title = "Stefano Mondino"
     instagram = "https://www.instagram.com/puntoste"
     youtube = "https://www.youtube.com/@mrpuntoste"
     twitter = "puntoste"
-
 
   [params.avatar.home]
     assetPath = "images/IMG_3486.jpeg"
@@ -73,27 +72,66 @@ title = "Stefano Mondino"
   [params.admonitions]
     alertStyle = "favicon"
 
-[[menus.main]]
+# ── English ────────────────────────────────────────────────────────────────────
+[languages.en]
+  languageName = "English"
+  weight = 1
+  [languages.en.params]
+    description = "iOS developer · Swift enthusiast · speaker · musician"
+
+[[languages.en.menus.main]]
   name = "Home"
   pageRef = "/"
   weight = 10
 
-[[menus.main]]
+[[languages.en.menus.main]]
   name = "Posts"
   pageRef = "/posts"
   weight = 20
 
-[[menus.main]]
+[[languages.en.menus.main]]
   name = "Speaking"
   pageRef = "/speaking"
   weight = 25
 
-[[menus.main]]
+[[languages.en.menus.main]]
   name = "Tags"
   pageRef = "/tags"
   weight = 30
 
-[[menus.main]]
+[[languages.en.menus.main]]
   name = "About"
-  url = "/about/"
+  pageRef = "/about"
+  weight = 40
+
+# ── Italiano ───────────────────────────────────────────────────────────────────
+[languages.it]
+  languageName = "Italiano"
+  weight = 2
+  [languages.it.params]
+    description = "Sviluppatore iOS · appassionato di Swift · speaker · musicista"
+
+[[languages.it.menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[languages.it.menus.main]]
+  name = "Articoli"
+  pageRef = "/posts"
+  weight = 20
+
+[[languages.it.menus.main]]
+  name = "Talk"
+  pageRef = "/speaking"
+  weight = 25
+
+[[languages.it.menus.main]]
+  name = "Tag"
+  pageRef = "/tags"
+  weight = 30
+
+[[languages.it.menus.main]]
+  name = "Chi sono"
+  pageRef = "/about"
   weight = 40

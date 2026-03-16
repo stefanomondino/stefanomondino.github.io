@@ -56,3 +56,4 @@ themes/mana/           # Mana theme (git submodule - DO NOT modify directly)
 - To override templates, copy the file from `themes/mana/layouts/` to `layouts/` keeping the same path
 - Content is in English unless otherwise specified
 - After changes to configuration or layouts, verify with `mise exec -- hugo` that the build works
+- Never use em dashes (—) in any written content: use commas, colons, or parentheses instead
